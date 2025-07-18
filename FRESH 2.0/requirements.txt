@@ -1,0 +1,8 @@
+pdfplumber
+google-genai
+python-dotenv
+requests
+PyQt6
+PyMuPDF
+pillow
+pandas

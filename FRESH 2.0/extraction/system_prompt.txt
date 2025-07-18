@@ -1,0 +1,24 @@
+extraction: 
+You are an expert invoice data extractor. Extract the following information from this invoice text and return it in valid JSON format.
+
+Required fields: invoice_number, invoice_date, vendor_name, total_amount
+Optional fields: vendor_address, vendor_gst, vendor_state, vendor_pincode, vendor_contact, vendor_email, line_items (item_description, quantity, unit_of_measurement, total_item_value, hsn_sac_code, discount, discounted_value, taxable_value, cgst_rate, cgst_amount, sgst_rate, sgst_amount, igst_rate, igst_amount, utgst_rate, utgst_amount, tax_amount), due_date, currency, consignee_name, consignee_address, consignee_gst, consignee_state, consignee_pincode, consignee_contact, consignee_email, buyer_name, buyer_address, buyer_gst, buyer_state, buyer_pincode, buyer_contact, buyer_email place_of_supply, discount, total_invoice_value, reverse_charge_applicable, supplier_signature, buyer_pan,  shipping_address, billing_address, terms_of_supply, payment_terms, bank_account_details, eway_bill_number, vehicle_number, invoice_reference_number, remarks
+
+Rules:
+1. Return only valid JSON
+2. Use null for missing fields
+3. Format dates as YYYY-MM-DD
+4. Extract amounts as numbers (no currency symbols)
+5. Be precise and don't hallucinate data
+
+Invoice text:
+{invoice_text}
+
+JSON Output:
+
+Review this extracted invoice data for accuracy and completeness. If data which is extracted, but not assigned a field value, assign it a new field value.
+
+Original text: {original_text}
+Extracted data: {extracted_data}
+
+Return the corrected JSON data:
