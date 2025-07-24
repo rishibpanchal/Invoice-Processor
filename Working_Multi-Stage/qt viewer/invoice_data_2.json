@@ -1,0 +1,80 @@
+{
+  "invices": [
+    {
+      "invoice_number": "BFF0425000719001",
+      "invoice_date": "29-09-2024",
+      "supplier": "Buzz Retail India Private Limited",
+      "ship_from_address": "Warehouse Saidham, G warehouse, At Village - Dohale, Post Padgha,, Opp Vaishnavdevi Mandir, Taluka Bhiwandi, Dist Thane, Bhiwandi , MAHARASHTRA, India - 421101",
+      "gstin": "27AAECB1611P",
+      "order_id": "OD332445266223967100",
+      "billing_address": "B-1902, Romell Diva, Chincoli, Bunder Road, Malad West, Mumbai 400064",
+      "description": "Wall Chargers SAMSUNG 25 W GaN 3 A",
+      "quantity": 1,
+      "gross_amount": 99.0,
+      "discount": 0.0,
+      "taxable_amount": 99.0,
+      "gst_rate": 9.0,
+      "sgst_rate": 9.0,
+      "igst_rate": 0.0,
+      "utgst_rate": 0.0,
+      "shipping_and_handling_charges": 70.0,
+      "secure_packaging_fee": 99.0,
+      "items": [
+        {
+          "product_title": "Wall Charger for Mobile",
+          "product_code": "ACCHYG6CVZEARUWZ",
+          "quantity": 1,
+          "gross_amount": 899.0,
+          "discount": 0.0,
+          "taxable_amount": 899.0,
+          "gst_rate": 9.0,
+          "sgst_rate": 9.0,
+          "igst_rate": 0.0,
+          "utgst_rate": 0.0
+        }
+      ]
+    },
+    {
+      "invoice_number": "BFF0425000719003",
+      "invoice_date": "29-09-2024",
+      "supplier": "CIGFIL Limited",
+      "ship_from_address": "Warehouse Saidham, G warehouse, At Village - Dohale, Post Padgha,, Opp Vaishnavdevi Mandiir, Taluka Bhiwandi, Dist Thane, Bhiwandi , MAHARASHTRA, India - 421101",
+      "gstin": "27AAACC3120C1ZH",
+      "order_id": "OD332445266223967100",
+      "billing_address": "B-1902, Romell Diva, Chincoli, Bunder Road, Malad West, Mumbai 400064",
+      "description": "Secuure Packaging Fee",
+      "quantity": 1,
+      "gross_amount": 99.0,
+      "discount": 0.0,
+      "taxable_amount": 99.0,
+      "gst_rate": 9.0,
+      "sgst_rate": 9.0,
+      "igst_rate": 0.0,
+      "utgst_rate": 0.0,
+      "shipping_and_handling_charges": 0.0,
+      "secure_packaging_fee": 99.0,
+      "items": []
+    },
+    {
+      "invoice_number": "BFF0425000719001",
+      "invoice_date": "29-09-2024",
+      "supplier": "CIGFIL Limited",
+      "ship_from_address": "Warehouse Saidham, G warehouse, At Village - Dohale, Post Padgha,, Opp Vaishnavdevi Mandiir, Taluka Bhiwandi, Dist Thane, Bhiwandi , MAHARASHTRA, India - 421101",
+      "gstin": "27AAACC3120C1ZH",
+      "order_id": "OD332445266223967100",
+      "billing_address": "B-1902, Romell Diva, Chincoli, Bunder Road, Malad West, Mumbai 400064",
+      "description": "Secuure Packaging Fee",
+      "quantity": 1,
+      "gross_amount": 99.0,
+      "discount": 0.0,
+      "taxable_amount": 99.0,
+      "gst_rate": 9.0,
+      "sgst_rate": 9.0,
+      "igst_rate": 0.0,
+      "utgst_rate": 0.0,
+      "shipping_and_handling_charges": 0.0,
+      "secure_packaging_fee": 99.0,
+      "items": []
+    }
+  ]
+}

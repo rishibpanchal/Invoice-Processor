@@ -1,0 +1,66 @@
+extraction:
+You are an expert invoice data extractor. Extract the following information from this invoice text and return it in valid JSON format.
+
+Required fields: invoice_number, invoice_date, vendor_name, total_amount
+Optional fields: vendor_address, vendor_gst, vendor_state, vendor_pincode, vendor_contact, vendor_email, line_items (item_description, quantity, unit_of_measurement, total_item_value, hsn_sac_code, discount, discounted_value, taxable_value, cgst_rate, cgst_amount, sgst_rate, sgst_amount, igst_rate, igst_amount, utgst_rate, utgst_amount, tax_amount), due_date, currency, consignee_name, consignee_address, consignee_gst, consignee_state, consignee_pincode, consignee_contact, consignee_email, buyer_name, buyer_address, buyer_gst, buyer_state, buyer_pincode, buyer_contact, buyer_email place_of_supply, discount, total_invoice_value, reverse_charge_applicable, supplier_signature, buyer_pan,  shipping_address, billing_address, terms_of_supply, payment_terms, bank_account_details, eway_bill_number, vehicle_number, invoice_reference_number, remarks
+
+Invoice Handling Rules:
+1. ALWAYS return invoices in the format: {"invoices": [array of invoice objects]}
+2. First, identify all unique invoice numbers in the document
+3. For SINGLE invoice: Extract data and wrap in array format: {"invoices": [invoice_object]}
+4. For MULTIPLE invoices:
+   a. Group all content by invoice number (pages/sections belonging to each invoice)
+   b. Extract data separately for each invoice number
+   c. Return as {"invoices": [invoice1_object, invoice2_object, ...]}
+   d. Ensure each invoice's data is extracted only from content that belongs to that specific invoice number
+   e. Do not mix data between different invoices
+   f. Do not fabricate, generate, or infer any information that is not present in the source text
+   g. Make sure that the array of JSON objects is arranged in the exact order of the pages of the invoice as they appear in the document
+   h. Each invoice should only contain data explicitly visible in its corresponding pages/sections
+   i. If products have the same HSN/SAC code but different product names/descriptions, treat them as separate line items - do not merge or combine them
+
+General Extraction Rules:
+1. Return only valid JSON
+2. Use null for missing fields
+3. Format dates as YYYY-MM-DD
+4. Extract amounts as numbers (no currency symbols)
+5. Be precise and don't hallucinate data
+6. Only extract information that is explicitly present in the invoice text
+7. NEVER fabricate, generate, or infer any data that is not explicitly visible in the source document
+8. ALWAYS structure the output as: {"invoices": [invoice1_json, invoice2_json, ...]} regardless of single or multiple invoices
+9. Maintain the exact order of invoices as they appear in the document pages
+10. Treat products with the same HSN/SAC code but different names/descriptions as separate line items
+
+Invoice text:
+{invoice_text}
+
+Instructions for Processing:
+1. Scan the entire document for invoice numbers
+2. ALWAYS return in format: {"invoices": [array of invoice objects]}
+3. For single invoice: Extract data and wrap in array: {"invoices": [invoice_object]}
+4. For multiple invoices: 
+   - Group content by invoice number
+   - Extract each invoice separately
+   - Return as {"invoices": [invoice1_object, invoice2_object, ...]}
+   - Arrange invoices in the exact order they appear in the document pages
+
+JSON Output:
+
+Review this extracted invoice data for accuracy and completeness. If data which is extracted, but not assigned a field value, assign it a new field value. Ensure the key "invoices" is spelled correctly.
+
+Original text: {original_text}
+Extracted data: {extracted_data}
+
+Validation Rules:
+- DO NOT fabricate, generate, or infer any data that is not explicitly present in the source document
+- DO NOT add any calculated fields or derived values during validation
+- The cgst_rate, sgst_rate, igst_rate, utgst_rate should all be in %
+- For multiple invoices: Ensure each invoice's data comes only from its corresponding sections
+- Do not cross-reference or mix data between different invoices
+- Only use information explicitly present in the source document
+- Maintain the exact order of invoices as they appear in the document pages
+- Only correct obvious extraction errors (e.g., wrong field assignment), do not add missing data
+- Products with the same HSN/SAC code but different names/descriptions must be treated as separate line items
+- During validation, check each spelling and correct it
+
+Return the corrected JSON data:
